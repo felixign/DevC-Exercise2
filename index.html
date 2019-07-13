@@ -1,11 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <title>Exercise 2</title>
+    <title>Simple Calculator</title>
+    <link rel='stylesheet' type='text/css' href='./style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='icon' type='image/x-icon'
+        href='https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png' />
+
+    <script language="JavaScript" type="text/javascript">
+        function Add() {
+            if (text1.value.length == 0 || text2.value.length == 0) {
+                alert("You must input any number");
+            } else {
+                num1 = parseInt(document.calc.text1.value);
+                num2 = parseInt(document.calc.text2.value);
+                num3 = num1 + num2;
+                document.calc.text3.value = num3;
+            }
+        }
+        function Substract() {
+            if (text1.value.length == 0 || text2.value.length == 0) {
+                alert("You must input any number");
+            } else {
+                num1 = parseInt(document.calc.text1.value);
+                num2 = parseInt(document.calc.text2.value);
+                num3 = num1 - num2;
+                document.calc.text3.value = num3;
+            }
+        }
+
+        function Multiply() {
+            if (text1.value.length == 0 || text2.value.length == 0) {
+                alert("You must input any number");
+            } else {
+                num1 = parseInt(document.calc.text1.value);
+                num2 = parseInt(document.calc.text2.value);
+                num3 = num1 * num2;
+                document.calc.text3.value = num3;
+            }
+        }
+
+        function Division() {
+            if (text1.value.length == 0 || text2.value.length == 0) {
+                alert("You must input any number");
+            } else {
+                num1 = parseInt(document.calc.text1.value);
+                num2 = parseInt(document.calc.text2.value);
+                num3 = num1 / num2;
+                document.calc.text3.value = num3;
+            }
+        }
+
+        function Clear() {
+            document.getElementById("calc").reset();
+        }
+
+    </script>
 </head>
+
 <body>
-    <center>
-        <h1>Kalkulator</h1>
-    </center>
+    <h1 class="heading">
+        <center>Simple Calculator </center>
+    </h1>
+    <form name="calc" id="calc">
+        <div class="form-group">
+            <label class="lbl">Number 1</label>
+            <input type="number" class="form-control" id="text1" placeholder="Input Number...">
+        </div>
+        <div class="form-group">
+            <label class="lbl">Number 2</label>
+            <input type="number" class="form-control" id="text2" placeholder="Input Another Number...">
+            <hr style="border-top: dotted 3px; color:deepskyblue" />
+        </div>
+        <div class="form-row">
+
+            <div class="col">
+                <label class="lbl">Operations</label>
+            </div>
+            <div class="col">
+                <input type="button" class="btn btn-primary btn-lg btn-block" value="+" name="button1" onClick="Add()">
+
+            </div>
+            <div class="col">
+                <input type="button" class="btn btn-primary btn-lg btn-block" value="-" name="button2"
+                    onClick="Substract()">
+
+            </div>
+            <div class="col">
+                <input type="button" class="btn btn-primary btn-lg btn-block" value="x" name="button3"
+                    onClick="Multiply()">
+
+            </div>
+            <div class="col">
+                <input type="button" class="btn btn-primary btn-lg btn-block" value="/" name="button4"
+                    onClick="Division()">
+
+            </div>
+            <div class="col">
+                <input type="button" class="btn btn-primary btn-lg btn-block" value="AC" name="button4"
+                    onClick="Clear()">
+
+            </div>
+        </div>
+        <div class="form-group">
+            <hr style="border-top: dotted 3px; color:deepskyblue" />
+            <label class="lbl">Result</label>
+            <input type="text" class="form-control" id="text3" placeholder="Result" disabled>
+        </div>
+    </form>
+
 </body>
+
 </html>
